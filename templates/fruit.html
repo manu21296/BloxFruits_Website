@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>{{ fruit['name'] }}</h2>
+<p>{{ fruit['description'] }}</p>
+<img src="{{ fruit['image_url'] }}" alt="{{ fruit['name'] }}">
+<h3>Abilities</h3>
+<ul>
+  {% for ability in abilities %}
+    <li>{{ ability['name'] }}: {{ ability['description'] }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

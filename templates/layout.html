@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header>
+      <h1>BLOX FRUITS</h1>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/users">Users</a>
+      {% if nav_categories %}
+        {% for category in nav_categories %}
+          <a href="/category/{{ category.category_id }}">{{ category.name }}</a>
+        {% endfor %}
+      {% endif %}
+    </nav>
+    <p>Fruits are a major plot device in BloxFruits. They are mysterious, supernatural fruits that are scattered throughout the world, and can grant special powers to anyone who eats them, ranging from the simplest abilities to highly destructive ones, and even the incredibly bizarre. As a price for consuming a Blox Fruit, the individual permanently becomes weak to seawater, essentially losing the ability to swim at all. There is no known way to remove the power or weaknesses, but once a user dies, the power will be reborn into another fruit waiting to be consumed by someone else. In addition, an individual can only acquire the power of a single Devil Fruit and survive. Their exact origin is a mystery, but they have existed for at least 800 years.</p>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <p>Nobody reads me!</p>
+    </footer>
+  </body>
+</html>
