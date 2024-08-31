@@ -1,41 +1,108 @@
-/* Reset some default styles */
-body, h1, h2, h3, p, ul, li, header, nav, footer {
+/* General Styles */
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-.input {
-    max-width: 190px;
-    background-color: #f5f5f5;
-    color: #242424;
-    padding: .15rem .5rem;
-    min-height: 40px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    line-height: 1.15;
-    box-shadow: 0px 10px 20px -18px;
-  }
-  
-  input:focus {
-    border-bottom: 2px solid #5b5fc7;
-    border-radius: 4px 4px 2px 2px;
-  }
-  
-  input:hover {
-    outline: 1px solid lightgrey;
-  }
-
-/* Body styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text color */
+    background-color: #121212; 
+    color: #e0e0e0; 
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-/* Container styles */
+/* Navigation bar styles */
+nav {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px;
+    text-align: center;
+    position: fixed; /* Keep the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Ensure it stays above other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.customCheckBoxHolder {
+    display: flex;
+}
+
+.customCheckBox {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: rgba(0, 0, 0, 0.16);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 300ms, color 300ms;
+}
+
+.customCheckBox:hover {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+.customCheckBox .inner {
+    font-size: 18px;
+    font-weight: 900;
+    pointer-events: none;
+    transition: transform 300ms;
+}
+
+.customCheckBox:hover .inner {
+    transform: translateY(-2px);
+}
+
+.customCheckBox.active {
+    background-color: #34723f; /* Highlight color for the active button */
+    color: white;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    margin-top: 60px; /* Add space for the navbar */
+    position: relative;
+}
+
+header h1 {
+    font-size: 6rem; /* Adjust size to your liking */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Search bar */
+.search-container {
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Other Elements */
+.content {
+    padding: 50px 20px;
+    background: #1e1e1e;
+}
+
 .container {
     max-width: 1000px;
     margin: auto;
@@ -43,48 +110,8 @@ body {
     padding: 0 20px;
 }
 
-/* Header styles */
-header {
-    background-image: url("images/banner.png");
-    width: 100%;
-    background-position: center;
-    padding-bottom: 450px;
-    
-}
-
-header h1 {
-    margin: 0;
-}
-
-/* Navigation styles */
-nav {
-    background: #1f1f1f; /* Darker nav background */
-    color: #ffffff;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: #ffffff;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Main content styles */
-main {
-    background: #1e1e1e; /* Darker main background */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Footer styles */
 footer {
-    background: #1f1f1f; /* Darker footer background */
+    background: #1f1f1f; 
     color: #ffffff;
     text-align: center;
     padding: 10px;
@@ -95,13 +122,33 @@ footer p {
     margin: 0;
 }
 
-/* List styles */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #333333; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5584ff;
+}
+
 ul {
     list-style: none;
 }
 
 ul li {
-    background: #333333; /* Darker list item background */
+    background: #333333; 
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
@@ -116,45 +163,12 @@ ul li a:hover {
     color: #5584ff;
 }
 
-/* Image styles */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+.customCheckBoxWrapper.active .customCheckBox {
+    background-color: #34723f;
+    color: white;
 }
 
-/* Heading styles */
-h2 {
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-/* Paragraph styles */
-h3 {
-    margin: 15px;
-    padding: 10px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-family: Tahoma, sans-serif;
-    font-size: x-large;
-}
-
-/* Button styles */
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #333333; /* Darker button background */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #5584ff;
-}
-
-p {
-    padding: 30px;
+nav a.active {
+    font-weight: bold;
+    color: #34723f;
 }

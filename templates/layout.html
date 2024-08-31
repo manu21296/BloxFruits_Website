@@ -7,19 +7,44 @@
   <body>
     <header>
       <nav>
-        <a href="/">Home</a>
-        <a href="/users">Users</a>
+        <div class="customCheckBoxHolder">
+          <a class="customCheckBox {{ 'active' if active_page == 'home' else '' }}" href="/" id="homeBtn">
+            <div class="inner">Home</div>
+          </a>
+          <a class="customCheckBox {{ 'active' if active_page == 'users' else '' }}" href="/users" id="usersBtn">
+            <div class="inner">Users</div>
+          </a>
+          <a class="customCheckBox {{ 'active' if active_page == 'categories' else '' }}" href="/categories" id="categoriesBtn">
+            <div class="inner">Categories</div>
+          </a>
+          <a class="customCheckBox {{ 'active' if active_page == 'about' else '' }}" href="/about" id="aboutBtn">
+            <div class="inner">About</div>
+          </a>
+        </div>
+        <!-- Additional categories generated dynamically -->
         {% if nav_categories %}
           {% for category in nav_categories %}
-            <a href="/category/{{ category.category_id }}">{{ category.name }}</a>
+            <a class="{{ 'active' if active_page == 'category_' ~ category.category_id else '' }}" href="/category/{{ category.category_id }}">
+              {{ category.name }}
+            </a>
           {% endfor %}
         {% endif %}
+        <!-- Search bar -->
+        <div class="search-container">
+          <form action="/search" method="get">
+            <input type="text" placeholder="Search..." name="q">
+          </form>
+        </div>
       </nav>
+      <h1>BLOX FRUITS</h1>
     </header>
+
     <h3>Blox Fruits is a dynamic action-adventure game on Roblox where players explore a vast, pirate-themed world, battling enemies and completing quests. The game centers around consuming "Blox Fruits" to gain unique powers and abilities, allowing for diverse combat styles and strategies. Players can personalize their characters with various outfits and equipment, navigate through different islands, and uncover hidden treasures. With a blend of fast-paced combat, exploration, and customization, Blox Fruits offers an engaging experience for those who enjoy adventure and action in a rich, interactive environment.</h3>
+    
     <main>
       {% block content %}{% endblock %}
     </main>
+
     <footer>
       <p>Based on One Piece and Blox Fruits</p>
     </footer>
