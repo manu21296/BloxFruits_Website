@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Categories</h2>
+<ul>
+  {% for category in categories %}
+    <li><a href="{{ url_for('category', category_id=category['category_id']) }}">{{ category['name'] }}</a></li>
+  {% endfor %}
+  <input class="input" name="text" placeholder="Search..." type="search">
+</ul>
+{% endblock %}
