@@ -21,7 +21,7 @@
             <div class="inner">About</div>
           </a>
         </div>
-        <!-- Additional categories generated dynamically -->
+        <!-- Categories generated dynamically -->
         {% if nav_categories %}
           {% for category in nav_categories %}
             <a class="{{ 'active' if active_page == 'category_' ~ category.category_id else '' }}" href="/category/{{ category.category_id }}">

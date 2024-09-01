@@ -40,7 +40,7 @@ def category(category_id):
     category = conn.execute('SELECT * FROM Categories WHERE category_id = ?', (category_id,)).fetchone()
     fruits = conn.execute('SELECT * FROM DevilFruits WHERE category_id = ?', (category_id,)).fetchall()
     conn.close()
-    return render_template('category.html', category=category, fruits=fruits, active_page='categories')
+    return render_template('category.html', category=category, fruits=fruits, active_page='category_' + str(category_id))
 
 # Route for individual fruit
 @app.route('/fruit/<int:fruit_id>')
