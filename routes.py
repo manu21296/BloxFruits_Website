@@ -5,15 +5,17 @@ app = Flask(__name__)
 
 # Connecting to the database
 def get_db_connection():
-    conn = sqlite3.connect('DF_DATABASE.db')
+    conn = sqlite3.connect('DF_DATABASE.db')  # Replace with your actual local path if different
     conn.row_factory = sqlite3.Row
     return conn
 
-# It retrieves the categories from the 'Categories' table
+# It retrieves the categories from the 'Categories' table, excluding unwanted ones from the navigation bar
 @app.context_processor
 def inject_categories():
     conn = get_db_connection()
-    categories = conn.execute('SELECT * FROM Categories').fetchall()
+    # Exclude categories with specific names from being displayed in the navigation bar
+    excluded_categories = ('Paramecia', 'Logia', 'Zoan')
+    categories = conn.execute('SELECT * FROM Categories WHERE name NOT IN (?, ?, ?)', excluded_categories).fetchall()
     conn.close()
     return {'nav_categories': categories}
 
@@ -25,13 +27,14 @@ def index():
     conn.close()
     return render_template('index.html', categories=categories, active_page='home')
 
-# Route for all categories (new)
+# Route for all categories
 @app.route('/categories')
 def categories():
     conn = get_db_connection()
-    categories = conn.execute('SELECT * FROM Categories').fetchall()
+    # Fetch all categories, including Paramecia, Logia, and Zoan
+    all_categories = conn.execute('SELECT * FROM Categories').fetchall()
     conn.close()
-    return render_template('categories.html', categories=categories, active_page='categories')
+    return render_template('categories.html', categories=all_categories, active_page='categories')
 
 # Route for individual category
 @app.route('/category/<int:category_id>')
@@ -59,7 +62,7 @@ def users():
     conn.close()
     return render_template('users.html', users=users, active_page='users')
 
-# Route for about page (new)
+# Route for about page
 @app.route('/about')
 def about():
     return render_template('about.html', active_page='about')

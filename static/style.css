@@ -1,4 +1,11 @@
 /* General Styles */
+@font-face {
+    font-family: 'BDSupper';
+    src: url('/static/fonts/BDSupper.ttf') format('truetype'); /* Adjust the path if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -6,14 +13,13 @@ html, body {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'BDSupper', sans-serif;
+    letter-spacing: 1.5px;
     line-height: 1.6;
-    background-color: #121212; 
-    color: #e0e0e0; 
-    background-image: url("images/background.jpg");
+    background: url("images/background.jpg") no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    color: #e0e0e0;
+    position: relative; /* Ensure the body element is positioned for overlay */
 }
 
 /* Navigation bar styles */
@@ -42,7 +48,6 @@ nav {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 300ms, color 300ms;
 }
 
 .customCheckBox:hover {
@@ -75,6 +80,7 @@ header {
     text-align: center;
     margin-top: 60px; /* Add space for the navbar */
     position: relative;
+    z-index: 2; /* Ensure it sits above the gradient overlay */
 }
 
 header h1 {
@@ -101,6 +107,8 @@ input[type="text"] {
 .content {
     padding: 50px 20px;
     background: #1e1e1e;
+    position: relative; /* Ensure content appears above the gradient */
+    z-index: 2; /* Ensure content is above the gradient overlay */
 }
 
 .container {
@@ -116,6 +124,9 @@ footer {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+
+
 }
 
 footer p {
@@ -171,4 +182,13 @@ ul li a:hover {
 nav a.active {
     font-weight: bold;
     color: #34723f;
+}
+
+h3 {
+    padding-left: 300px;
+    padding-right: 300px;
+    font-size: large;
+    padding: 200px;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
 }

@@ -3,6 +3,7 @@
   <head>
     <title>My Site</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body>
     <header>
@@ -36,15 +37,7 @@
           </form>
         </div>
       </nav>
-      <h1>BLOX FRUITS</h1>
-    </header>
-
-    <h3>Blox Fruits is a dynamic action-adventure game on Roblox where players explore a vast, pirate-themed world, battling enemies and completing quests. The game centers around consuming "Blox Fruits" to gain unique powers and abilities, allowing for diverse combat styles and strategies. Players can personalize their characters with various outfits and equipment, navigate through different islands, and uncover hidden treasures. With a blend of fast-paced combat, exploration, and customization, Blox Fruits offers an engaging experience for those who enjoy adventure and action in a rich, interactive environment.</h3>
-    
-    <main>
-      {% block content %}{% endblock %}
-    </main>
-
+     <main>{% block content %}{% endblock %}</main>
     <footer>
       <p>Based on One Piece and Blox Fruits</p>
     </footer>
