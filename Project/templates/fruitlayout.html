@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/users">Users</a>
+        {% if nav_categories %}
+          {% for category in nav_categories %}
+            <a href="/category/{{ category.category_id }}">{{ category.name }}</a>
+          {% endfor %}
+        {% endif %}
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <p>Based on One Piece and Blox Fruits</p>
+    </footer>
+  </body>
+</html>
