@@ -62,6 +62,16 @@ def users():
     conn.close()
     return render_template('users.html', users=users, active_page='users')
 
+# Route for individual user
+@app.route('/user/<int:user_id>')
+def user(user_id):
+    conn = get_db_connection()
+    user = conn.execute('SELECT * FROM Users WHERE user_id = ?', (user_id,)).fetchone()
+    conn.close()
+    if user is None:
+        return "User not found", 404
+    return render_template('user.html', user=user)
+
 # Route for about page
 @app.route('/about')
 def about():

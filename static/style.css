@@ -16,7 +16,7 @@ body {
     font-family: 'BDSupper', sans-serif;
     letter-spacing: 1.5px;
     line-height: 1.6;
-    background: url("images/background.jpg") no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/background.jpg") no-repeat center center fixed;
     background-size: cover;
     color: #e0e0e0;
     position: relative; /* Ensure the body element is positioned for overlay */
@@ -192,3 +192,110 @@ h3 {
     background-color: rgba(0, 0, 0, 0.9);
     text-align: center;
 }
+
+/* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+}
+
+html, body {
+    width: 100%; /* Ensure body takes the full width */
+    height: 100%;
+}
+
+/* User Grid */
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Minimum width of 150px for each card */
+    gap: 10px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+    width: calc(100% - 40px); /* Ensure full width minus padding */
+    margin: 0 auto; /* Center the grid if needed */
+}
+
+/* User Card */
+.user-card {
+    background: #333; /* Change to a dark background color */
+    border: 1px solid #555; /* Darker border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside each card */
+    text-align: center; /* Center align text */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    min-height: 60px; /* Set a minimum height for the card */
+    color: #ffffff; /* Text color inside the cards */
+}
+
+/* Optional: Add hover effect */
+.user-card:hover {
+    background: #444; /* Darker shade on hover for better visibility */
+}
+
+.button {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    color: rgb(193, 163, 98);
+    border: 2px solid rgb(193, 163, 98);
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+  
+  .button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: rgb(193, 163, 98);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .button:hover::before {
+    scale: 3;
+  }
+  
+  .button:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+  }
+  
+  .button:active {
+    scale: 1;
+  }
+  
+/* Center the title and button */
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust margin or padding if needed to separate the button from the title */
+.title-container h1 {
+    margin-bottom: 3px; /* Space between the title and the button */
+}
+
+.button {
+    padding: 15px 30px; /* Increase padding to make the button larger */
+    font-family: 'BDSupper', sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 20px;     /* Increase the font size */
+    border: 3px solid rgb(141, 104, 61); /* Increase the border thickness */
+    color: #34723f;
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
+}
+  
