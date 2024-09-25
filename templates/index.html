@@ -1,55 +1,13 @@
-<!doctype html>
-<html>
-  <head>
-    <title>My Site</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="customCheckBoxHolder">
-          <a class="customCheckBox {{ 'active' if active_page == 'home' else '' }}" href="/" id="homeBtn">
-            <div class="inner">Home</div>
-          </a>
-          <a class="customCheckBox {{ 'active' if active_page == 'users' else '' }}" href="/users" id="usersBtn">
-            <div class="inner">Users</div>
-          </a>
-          <a class="customCheckBox {{ 'active' if active_page == 'categories' else '' }}" href="/categories" id="categoriesBtn">
-            <div class="inner">Categories</div>
-          </a>
-          <a class="customCheckBox {{ 'active' if active_page == 'about' else '' }}" href="/about" id="aboutBtn">
-            <div class="inner">About</div>
-          </a>
-        </div>
-        <!-- Categories generated dynamically -->
-        {% if nav_categories %}
-          {% for category in nav_categories %}
-            <a class="{{ 'active' if active_page == 'category_' ~ category.category_id else '' }}" href="/category/{{ category.category_id }}">
-              {{ category.name }}
-            </a>
-          {% endfor %}
-        {% endif %}
-        <!-- Search bar -->
-        <div class="search-container">
-          <form action="/search" method="get">
-            <input type="text" placeholder="Search..." name="q">
-          </form>
-        </div>
-      </nav>
-      <div class="title-container">
-        <h1>BLOX FRUITS</h1>
-        <button class="button">Explore</button>
-      </div>
-    </header>
-    <main>
-    <h3>Blox Fruits is a dynamic action-adventure game on Roblox where players explore a vast, pirate-themed world, battling enemies and completing quests. The game centers around consuming "Blox Fruits" to gain unique powers and abilities, allowing for diverse combat styles and strategies. Players can personalize their characters with various outfits and equipment, navigate through different islands, and uncover hidden treasures. With a blend of fast-paced combat, exploration, and customization, Blox Fruits offers an engaging experience for those who enjoy adventure and action in a rich, interactive environment.</h3>
-    <h3>The world of One Piece is a vast and diverse oceanic realm, known as the Grand Line, where pirates, marines, and adventurers seek the legendary treasure called the "One Piece." It is a world filled with mysterious islands, unique cultures, and powerful individuals possessing extraordinary abilities granted by the mystical Devil Fruits. The story follows Monkey D. Luffy and his crew of Straw Hat Pirates as they navigate treacherous seas, battle formidable enemies, and forge unbreakable bonds, all while chasing their dreams in a world ruled by the enigmatic forces of the World Government and the fearsome Yonko.</h3>
-    {% block content %}{% endblock %}
-    </main>
-    <footer>
-      <p>Based on One Piece and Blox Fruits</p>
-    </footer>
-  </body>
-</html>
+{% extends "layout.html" %}
 
+{% block title_button %}
+<div class="title-container">
+    <h1>BLOX FRUITS</h1>
+    <button class="button">Explore</button>
+</div>
+{% endblock %}
+
+{% block content %}
+<h3>Blox Fruits is a dynamic action-adventure game on Roblox where players explore a vast, pirate-themed world, battling enemies and completing quests. The game centers around consuming "Blox Fruits" to gain unique powers and abilities, allowing for diverse combat styles and strategies. Players can personalize their characters with various outfits and equipment, navigate through different islands, and uncover hidden treasures. With a blend of fast-paced combat, exploration, and customization, Blox Fruits offers an engaging experience for those who enjoy adventure and action in a rich, interactive environment.</h3>
+<h3>The world of One Piece is a vast and diverse oceanic realm, known as the Grand Line, where pirates, marines, and adventurers seek the legendary treasure called the "One Piece." It is a world filled with mysterious islands, unique cultures, and powerful individuals possessing extraordinary abilities granted by the mystical Devil Fruits. The story follows Monkey D. Luffy and his crew of Straw Hat Pirates as they navigate treacherous seas, battle formidable enemies, and forge unbreakable bonds, all while chasing their dreams in a world ruled by the enigmatic forces of the World Government and the fearsome Yonko.</h3>
+{% endblock %}

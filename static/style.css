@@ -22,6 +22,11 @@ body {
     position: relative; /* Ensure the body element is positioned for overlay */
 }
 
+h1 {
+    font-size: 100px;
+    text-align: center;
+}
+
 /* Navigation bar styles */
 nav {
     width: 100%;
@@ -76,7 +81,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
     text-align: center;
     margin-top: 60px; /* Add space for the navbar */
     position: relative;
@@ -88,6 +92,7 @@ header h1 {
     color: #ffffff;
     margin: 0;
     padding: 0;
+    padding-top: 200px;
 }
 
 /* Search bar */
@@ -119,14 +124,10 @@ input[type="text"] {
 }
 
 footer {
-    background: #1f1f1f; 
     color: #ffffff;
     text-align: center;
     padding: 10px;
-    margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-
-
+    margin-top: 100px;
 }
 
 footer p {
@@ -148,6 +149,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 200px;
 }
 
 button:hover {
@@ -193,6 +195,7 @@ h3 {
     text-align: center;
 }
 
+
 /* General reset for margin and padding */
 * {
     margin: 0;
@@ -205,33 +208,125 @@ html, body {
     height: 100%;
 }
 
-/* User Grid */
+body {
+    position: relative; /* To make sure content is positioned properly */
+    padding-top: 60px; /* Make room for the navbar */
+}
+
 .user-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Minimum width of 150px for each card */
-    gap: 10px; /* Space between grid items */
+    grid-template-columns: repeat(4, 1fr); /* Creates 3 columns of equal width */
+    gap: 20px; /* Space between grid items */
     padding: 20px; /* Padding around the grid */
-    width: calc(100% - 40px); /* Ensure full width minus padding */
-    margin: 0 auto; /* Center the grid if needed */
+    margin: 0 auto; /* Center the grid */
+    margin-top: 50px; /* Reduced margin to ensure the heading is visible */
 }
 
 /* User Card */
 .user-card {
-    background: #333; /* Change to a dark background color */
-    border: 1px solid #555; /* Darker border color */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    border: 1px solid #8310b5; /* Darker border color */
     border-radius: 5px; /* Rounded corners */
-    padding: 15px; /* Padding inside each card */
+    padding: 30px; /* Padding inside each card */
     text-align: center; /* Center align text */
-    display: flex; /* Flexbox for centering */
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
-    min-height: 60px; /* Set a minimum height for the card */
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px; /* Minimum height for the card */
     color: #ffffff; /* Text color inside the cards */
+}
+
+.user-card a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.user-card a:hover {
+    color: #dadee8; /* Change text color on hover */
 }
 
 /* Optional: Add hover effect */
 .user-card:hover {
-    background: #444; /* Darker shade on hover for better visibility */
+    background: #525077; /* Darker shade on hover */
+}
+
+.fruit-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns of equal width */
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+    width: calc(100% - 40px); /* Ensure full width minus padding */
+    margin: 0 auto; /* Center the grid */
+    margin-top: 50px; /* Reduced margin to ensure the heading is visible */
+}
+
+/* User Card */
+.fruit-card {
+    background: #333; /* Dark background */
+    border: 1px solid #555; /* Darker border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside each card */
+    text-align: center; /* Center align text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px; /* Minimum height for the card */
+    color: #ffffff; /* Text color inside the cards */
+}
+
+.fruit-card a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.fruit-card a:hover {
+    color: #dadee8; /* Change text color on hover */
+}
+
+/* Optional: Add hover effect */
+.fruit-card:hover {
+    background: #444; /* Darker shade on hover */
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 3 columns of equal width */
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+    margin: 0 auto; /* Center the grid */
+    margin-top: 25px; /* Reduced margin to ensure the heading is visible */
+    padding-left: 330px;
+    padding-bottom: 250px;
+}
+
+/* User Card */
+.category-card {
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    border: 1px solid #8310b5; /* Darker border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 30px; /* Padding inside each card */
+    text-align: center; /* Center align text */
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px; /* Minimum height for the card */
+    color: #ffffff; /* Text color inside the cards */
+}
+
+.category-card a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.category-card a:hover {
+    color: #dadee8; /* Change text color on hover */
+}
+
+/* Optional: Add hover effect */
+.category-card:hover {
+    background: #525077; /* Darker shade on hover */
 }
 
 .button {
@@ -298,4 +393,41 @@ html, body {
     color: #34723f;
     background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background */
 }
-  
+
+/* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+}
+
+h5{
+    padding-top: 300px;
+    margin-top: 4em;
+    font-size: 100px;
+}
+
+img{
+    height: 350px;
+    width: 350px;
+    margin-left: 580px;
+}
+
+.categories h1 {
+    padding-top: 3000px;
+}
+
+h6 {
+    font-size: 100px;
+    text-align: center;
+    padding-top: 125px;
+}
+
+h4 {
+    padding-left: 300px;
+    padding-right: 300px;
+    font-size: 30px;
+    padding: 200px;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+}

@@ -1,9 +1,11 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
 {% block content %}
-<h2>{{ category['name'] }}</h2>
-<ul>
-  {% for fruit in fruits %}
-    <li><a href="{{ url_for('fruit', fruit_id=fruit['fruit_id']) }}">{{ fruit['name'] }}</a></li>
-  {% endfor %}
-</ul>
+  <h2>{{ category['name'] }}</h2>
+  <div class="fruit-grid">
+    {% for fruit in fruits %}
+      <div class="fruit-card">
+        <a href="{{ url_for('fruit', fruit_id=fruit['fruit_id']) }}">{{ fruit['name'] }}</a>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

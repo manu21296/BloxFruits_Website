@@ -1,9 +1,16 @@
 {% extends 'layout.html' %}
 {% block content %}
-  <h2>Categories</h2>
-  <ul>
-    {% for category in categories %}
-      <li><a href="{{ url_for('category', category_id=category.category_id) }}">{{ category.name }}</a></li>
-    {% endfor %}
-  </ul>
+  <h6>Categories</h6>
+    <div class="category-grid">
+      {% for category in categories %}
+        <div class="category-card">
+          <a href="{{ url_for('category', category_id=category.category_id) }}">{{ category.name }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  <h4>Paramecia is one of the three main types of Devil Fruits in One Piece, granting users a range of abilities that can modify their bodies or the environment around them if the fruit awakens. Paramecia powers can enhance physical abilities, alter the user’s form, or produce various effects that often defy the laws of nature. These fruits are known for their versatility, allowing users to develop unique combat styles and strategies.</h4>
+  <h4>Logia is the second type of Devil Fruits in One Piece, granting users the ability to transform into, produce, and control an element or substance, making them almost invulnerable to physical attacks. Logia fruits allow for complete mastery over their associated element, enabling users to create, manipulate, and even become the element itself. This grants them a range of powerful offensive and defensive capabilities, such as evasion through intangibility, which allows them to phase through attacks.</h4>
+  <h4>Zoan is known to be the strongest of the three types of Devil Fruits in One Piece, granting users the ability to transform into a specific animal or a mythical creature that combines both their human and animal traits. These fruits enhance physical abilities such as strength, agility, and senses, making Zoan users formidable in combat. They are unique in that they allow for multiple transformations, including full animal form and a hybrid form, providing versatility in various situations. Additionally, some advanced Zoan fruits grant users enhanced recovery abilities, allowing them to heal from injuries more quickly than typical humans.</h4>
+  <h4>Blox Fruits has taken inspiration from these devil fruits and have created fruits of their own which are split into the same three categories.</h4>
 {% endblock %}
+

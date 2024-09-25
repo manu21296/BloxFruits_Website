@@ -1,47 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
+<body class="page-users">
   <h1>Users</h1>
-  <div class="users-grid">
-    {% for user in users %}
-      <a href="{{ url_for('user', user_id=user['user_id']) }}">{{ user['name'] }}</a> <!-- Keep this for user names -->
-      </a>
-    {% endfor %}
-  </div>
+    <div class="user-grid">
+      {% for user in users %}
+        <div class="user-card">
+          <a href="{{ url_for('user', user_id=user['user_id']) }}">{{ user['name'] }}</a>
+        </div>
+      {% endfor %}
+    </div>
+</body>
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <a href="{{ url_for('user', user_id=user['user_id']) }}">{{ user['name'] }}</a> <!-- Keep this for user names -->
