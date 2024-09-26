@@ -38,12 +38,12 @@ def categories():
 # Route for individual category
 @app.route('/category/<int:category_id>')
 def category(category_id):
+    if category_id > 38:
+        return render_template('404.html'), 404
+    
     conn = get_db_connection()
     category = conn.execute('SELECT * FROM Categories WHERE category_id = ?', (category_id,)).fetchone()
     fruits = conn.execute('SELECT * FROM DevilFruits WHERE category_id = ?', (category_id,)).fetchall()
-    if category is None:
-        abort(404)  # This will trigger your 404 error page
-    conn.close()
     return render_template('category.html', category=category, fruits=fruits, active_page='category_' + str(category_id))
 
 # Route for individual fruit
