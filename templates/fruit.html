@@ -3,7 +3,7 @@
 <h1>{{ fruit['name'] }}</h1>
 <img src="{{ url_for('static', filename='images/' + fruit['image_url']) }}" alt="{{ fruit['name'] }}">
 <h4>{{ fruit['description'] }}</h4>
-<h9>Strongest Ability</h9>
+<h9>Main Ability</h9>
 <h3>
   <ul>
     {% for ability in abilities %}
@@ -11,4 +11,6 @@
     {% endfor %}
   </ul>
 </h3>
+<h9>Market Value</h9>
+<h4>{{ fruit['market_value'] }}</h4>
 {% endblock %}

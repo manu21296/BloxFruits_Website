@@ -2,12 +2,13 @@
 <html>
 <head>
     <title>My Site</title>
+    <!-- linking stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <header>
-    
+    <!-- put the bullet points in a div -->
     <nav>
         <div class="customCheckBoxHolder">
             <a class="customCheckBox {{ 'active' if active_page == 'home' else '' }}" href="/" id="homeBtn">
@@ -23,6 +24,7 @@
                 <div class="inner">About</div>
             </a>
         </div>
+        <!-- added searchbar -->
         <div class="searchbar">
             <form action="{{ url_for('search') }}" method="get">
                 <input type="text" name="query" placeholder="Search for a fruit" required>

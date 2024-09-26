@@ -49,10 +49,18 @@ def category(category_id):
 # Route for individual fruit
 @app.route('/fruit/<int:fruit_id>')
 def fruit(fruit_id):
+    if fruit_id > 38:
+        return render_template('404.html'), 404
+
     conn = get_db_connection()
     fruit = conn.execute('SELECT * FROM DevilFruits WHERE fruit_id = ?', (fruit_id,)).fetchone()
+    if fruit is None:
+        conn.close()
+        return render_template('404.html'), 404
+
     abilities = conn.execute('SELECT * FROM DevilFruits_Abilities WHERE fruit_id = ?', (fruit_id,)).fetchall()
     conn.close()
+
     return render_template('fruit.html', fruit=fruit, abilities=abilities)
 
 # Route for users
@@ -66,12 +74,18 @@ def users():
 # Route for individual user
 @app.route('/user/<int:user_id>')
 def user(user_id):
+    if user_id > 39:
+        return render_template('404.html'), 404
+
     conn = get_db_connection()
     user = conn.execute('SELECT * FROM Users WHERE user_id = ?', (user_id,)).fetchone()
     conn.close()
+
     if not user:
-        abort(404)  # Triggers the 404 error page
+        return render_template('404.html'), 404
+
     return render_template('user.html', user=user)
+
 
 # Route for about page
 @app.route('/about')

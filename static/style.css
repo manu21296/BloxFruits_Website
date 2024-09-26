@@ -247,6 +247,7 @@ body {
     align-items: center;
     min-height: 100px; /* Minimum height for the card */
     color: #ffffff; /* Text color inside the cards */
+    z-index: 2000;
 }
 
 .user-card a {
@@ -326,6 +327,7 @@ body {
     align-items: center;
     min-height: 100px; /* Minimum height for the card */
     color: #ffffff; /* Text color inside the cards */
+    z-index: 2000;
 }
 
 .category-card a {
