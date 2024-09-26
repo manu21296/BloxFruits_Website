@@ -7,6 +7,7 @@
 </head>
 <body>
 <header>
+    
     <nav>
         <div class="customCheckBoxHolder">
             <a class="customCheckBox {{ 'active' if active_page == 'home' else '' }}" href="/" id="homeBtn">
@@ -22,6 +23,12 @@
                 <div class="inner">About</div>
             </a>
         </div>
+        <div class="searchbar">
+            <form action="{{ url_for('search') }}" method="get">
+                <input type="text" name="query" placeholder="Search for a fruit" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         <!-- Categories generated dynamically -->
         {% if nav_categories %}
             {% for category in nav_categories %}
@@ -30,12 +37,6 @@
                 </a>
             {% endfor %}
         {% endif %}
-        <!-- Search bar -->
-        <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Search..." name="q">
-            </form>
-        </div>
     </nav>
     {% block title_button %}{% endblock %}
 </header>

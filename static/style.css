@@ -37,9 +37,15 @@ nav {
     top: 0;
     left: 0;
     z-index: 10; /* Ensure it stays above other elements */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+
+.searchbar {
+    margin-left: 1.5vh;
+    padding: 13px;
+    text-align: right;
+    position: fixed;
+    top: 0;
+    right: 0;
 }
 
 .customCheckBoxHolder {
@@ -132,12 +138,18 @@ footer {
 
 footer p {
     margin: 0;
+    font-size: 15px;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    display: flex;
+    text-align: center;
+    margin: auto;
     border-radius: 5px;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+    margin-bottom: 100px;
 }
 
 button {
@@ -161,9 +173,9 @@ ul {
 }
 
 ul li {
-    background: #333333; 
+    background: rgba(0, 0, 0, 0.9); 
     margin: 5px 0;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
 }
 
@@ -246,28 +258,29 @@ body {
     color: #dadee8; /* Change text color on hover */
 }
 
-/* Optional: Add hover effect */
+/*Add hover effect */
 .user-card:hover {
     background: #525077; /* Darker shade on hover */
+    
 }
 
 .fruit-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns of equal width */
+    grid-template-columns: repeat(4, 1fr); /* Creates 3 columns of equal width */
     gap: 20px; /* Space between grid items */
     padding: 20px; /* Padding around the grid */
-    width: calc(100% - 40px); /* Ensure full width minus padding */
     margin: 0 auto; /* Center the grid */
     margin-top: 50px; /* Reduced margin to ensure the heading is visible */
 }
 
 /* User Card */
 .fruit-card {
-    background: #333; /* Dark background */
-    border: 1px solid #555; /* Darker border color */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    border: 1px solid #8310b5; /* Darker border color */
     border-radius: 5px; /* Rounded corners */
-    padding: 20px; /* Padding inside each card */
+    padding: 30px; /* Padding inside each card */
     text-align: center; /* Center align text */
+    font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -284,9 +297,9 @@ body {
     color: #dadee8; /* Change text color on hover */
 }
 
-/* Optional: Add hover effect */
+/*Add hover effect */
 .fruit-card:hover {
-    background: #444; /* Darker shade on hover */
+    background: #525077; /* Darker shade on hover */
 }
 
 .category-grid {
@@ -407,12 +420,6 @@ h5{
     font-size: 100px;
 }
 
-img{
-    height: 350px;
-    width: 350px;
-    margin-left: 580px;
-}
-
 .categories h1 {
     padding-top: 3000px;
 }
@@ -420,14 +427,86 @@ img{
 h6 {
     font-size: 100px;
     text-align: center;
-    padding-top: 125px;
+    padding-top: 100px;
 }
 
 h4 {
     padding-left: 300px;
     padding-right: 300px;
-    font-size: 30px;
+    font-size: 20px;
     padding: 200px;
     background-color: rgba(0, 0, 0, 0.9);
     text-align: center;
+}
+
+h7 {
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid #8310b5; /* Darker border color */
+    border-radius: 5px; /* Rounded corners */
+    justify-content: center;
+    padding: 20px;
+    display: flex;
+    margin-left: 650px;
+    margin-right: 650px;
+    text-align: center;
+}
+
+.user-img {  
+    align-content: center;
+}
+
+
+h8 {
+    font-size: 5rem; /* Adjust size to your liking */
+    color: #ffffff;
+    text-align: center;
+}
+
+.user {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-bottom: 120px;
+    padding-top: 80px;
+}
+
+.about-page {
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.about-page p {
+    padding-bottom: 200px;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+.about-page h2 {
+    padding: 50px;
+}
+
+h9 {
+    padding-left: 300px;
+    padding-right: 300px;
+    font-size: 50px;
+    padding-top: 260px;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+h10 {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchresult {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    padding-top: 50px;
+    
 }

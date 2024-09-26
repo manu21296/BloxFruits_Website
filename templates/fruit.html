@@ -2,12 +2,13 @@
 {% block content %}
 <h1>{{ fruit['name'] }}</h1>
 <img src="{{ url_for('static', filename='images/' + fruit['image_url']) }}" alt="{{ fruit['name'] }}">
-<h3>Description</h3>
-<p>{{ fruit['description'] }}</p>
-<h3>Abilities</h3>
-<ul>
-  {% for ability in abilities %}
-    <li>{{ ability['name'] }}: {{ ability['description'] }}</li>
-  {% endfor %}
-</ul>
+<h4>{{ fruit['description'] }}</h4>
+<h9>Strongest Ability</h9>
+<h3>
+  <ul>
+    {% for ability in abilities %}
+      <li>{{ ability['name'] }}: {{ ability['description'] }}</li>
+    {% endfor %}
+  </ul>
+</h3>
 {% endblock %}
